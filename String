@@ -1,0 +1,38 @@
+local String = {}
+
+function String:ObfuscateString(string)
+	local ObfuscatedString = string:gsub(".", function(bb) return "\\" .. bb:byte() or string.."\"" end)
+	return ObfuscatedString
+end
+
+function String:RandomNumber(n1,n2)
+	local Number = math.random(n1,n2)
+	return Number
+end
+
+function String:TextUnicode(n1)
+	local Unicode = string.char(n1)
+	return Unicode
+end
+
+function String:TextUnicodeTwice(n1,n2)
+	local Unicodes = string.char(n1,n2)
+	return Unicodes
+end
+
+function String:RandomTextUnicode(n1,n2)
+	local Unicode = string.char(math.random(n1,n2))
+	return Unicode
+end
+
+function String:ToString(obj)
+	local returnedString = tostring(obj)
+	return returnedString
+end
+
+function String:HashCode(string,protection_text)
+	local HashedString = (ToString(ObfuscateString(protection_text..#string..#string+50+math.random(24,92)..RandomTextUnicode(12,92)).."("..RandomNumber(12,53)..")"..#string..ObfuscateString(obftext[1]..obftext[2]..obftext[3]).."\n"..obftext[1]..obftext[2]..obftext[3]))
+	return(HashedString)
+end
+
+return String
