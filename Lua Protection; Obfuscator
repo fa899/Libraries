@@ -1,7 +1,7 @@
 --[[
 Lua Protection LuaU
 How to use the library:
-local Library = loadstring(game:HttpGet("rawlinkhere"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/fa899/Libraries/main/Lua%20Protection%3B%20Obfuscator"))()
 library:obfuscate('print("codehere")')
 --]]
 
