@@ -1,0 +1,29 @@
+-- This works for ROBLOX Studio and Client, just use the player as yourself and it will work (ON CLIENT)
+
+local module = {}
+
+function module.WalkSpeed(plr,number)
+   if game.Players:FindFirstChild(plr) then
+      game.Players:FindFirstChild(plr).Character.Humanoid.WalkSpeed = number
+   else
+      warn('The player "'..plr..'" does not exist.')
+   end
+end
+
+function module.JumpPower(plr,number)
+   if game.Players:FindFirstChild(plr) then
+      game.Players:FindFirstChild(plr).Character.Humanoid.JumpPower = number
+   else
+      warn('The player "'..plr..'" does not exist.')
+   end
+end
+
+function module.HipHeight(plr,number)
+   if game.Players:FindFirstChild(plr) then
+      game.Players:FindFirstChild(plr).Character.Humanoid.HipHeight = number
+   else
+      warn('The player "'..plr..'" does not exist.')
+   end
+end
+
+return module
