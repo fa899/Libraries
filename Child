@@ -1,0 +1,30 @@
+local module = {}
+
+function module:WaitForChild(parent,child) -- Example: Child:WaitForChild(workspace, "Hi")
+	if parent:FindFirstChild(child) then
+		return parent:FindFirstChild(child)
+	elseif not parent:FindFirstChild(child) then
+		repeat game:GetService("RunService").Heartbeat:Wait() until parent:FindFirstChild(child)
+		return parent:FindFirstChild(child)
+	end
+end
+
+function module:FindChild(parent,child) -- Example: Child:FindChild(workspace, "Hi")
+	if not parent:FindFirstChild(child) then
+		warn("This child located in "..parent:GetFullName().." does not exist.")
+	else
+		return parent:FindFirstChild(child)
+	end
+end
+
+function module:FindInstance(parent,classname,name) -- Example: Child:FindInstance(workspace, "LocalScript", "Script")
+	for i,v in pairs(parent:GetChildren()) do
+		if v:IsA(classname) then
+			if v.Name == name then
+				return v
+			end
+		end
+	end
+end
+
+return module
