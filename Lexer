@@ -41,6 +41,9 @@ local lua_builtin = {
 	["next"] = true;["pairs"] = true;["pcall"] = true;["print"] = true;["rawequal"] = true;
 	["rawget"] = true;["rawset"] = true;["select"] = true;["setfenv"] = true;["setmetatable"] = true;
 	["tonumber"] = true;["tostring"] = true;["type"] = true;["unpack"] = true;["xpcall"] = true;
+	["gethui"] = true;
+	["cloneref"] = true;
+	["syn"] = true;
 
 	-- Lua Variables
 	["_G"] = true;["_VERSION"] = true;
