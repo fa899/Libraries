@@ -260,6 +260,7 @@ local UnProtectInstance = function(NewInstance)
 end
 local mt = GetRawMT(game)
 local old = mt.__newindex
+local old2 = mt.__index
 setreadonly(mt, false)
 local closure = newcclosure or new_cclosure or function(f) return f end
 --[[ Script ]]--
@@ -284,6 +285,13 @@ mt.__newindex = closure(function(self, prop, val)
    	end
    end
    return old(self, prop, val)
+end)
+
+mt.__index = closure(function(self,prop,val)
+   if self == hui and prop == "Parent" and val ~= game.CoreGui then
+      return old2(self,prop,nil)
+   end
+   return old2(self,prop,val)
 end)
 
 return gethui
