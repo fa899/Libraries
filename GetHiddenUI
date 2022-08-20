@@ -288,10 +288,12 @@ mt.__newindex = closure(function(self, prop, val)
 end)
 
 mt.__index = closure(function(self,prop,val)
-   if self == hui and prop == "Parent" and val ~= game.CoreGui then
-      return old2(self,prop,nil)
+   if self == hui and prop == "Parent" then
+      return old2(self, prop, nil)
    end
    return old2(self,prop,val)
 end)
+
+warn(self.Parent, self.Name, self:GetFullName())
 
 return gethui
