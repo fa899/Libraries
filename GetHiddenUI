@@ -1,0 +1,23 @@
+wf = writefile or write_file or syn.write_file or syn.writefile
+rf = readfile or read_file or syn.read_file or syn.readfile
+
+wf('gethui.lua', [[<roblox!‰˙
+
+                META$   "       đ      ExplicitAutoJoints   trueINST-   Q       ˙       BindableFunction 
+  ŔINST          đ      Folder       PROP(   P       ˙       AttributesSerialize  P     PROP$   ©       ˙
+       Name   Function xPctionPROP   A       ď       Tags  P     PROP"           đ      AttributesSerialize    PROP          đ      Name   FolderPROP          đ      Tags    PRNT   u       ?    7 	 P    END     	       </roblox>]])
+
+if not getgenv then
+	getgenv = (function()
+		return _G
+	end)();
+end
+
+local hui = game:GetObjects(rf("gethui.lua"))[1]
+hui.Parent = game.CoreGui
+
+getgenv().gethui = (function()
+	return
+end)();
+
+return getgenv().gethui
