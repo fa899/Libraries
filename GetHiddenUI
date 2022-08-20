@@ -267,4 +267,4 @@ getgenv().gethui = (function()
 	return hui
 end)();
 
-return getgenv().gethui
+return gethui
