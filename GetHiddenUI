@@ -252,17 +252,16 @@ NewIndex = HookMetaMethod(game , "__newindex", function(...)
     return NewIndex(...)
 end)
 
-ProtectInstance = function(NewInstance)
+local ProtectInstance = function(NewInstance)
     table.insert(ProtectedInstances, NewInstance)
 end
-UnProtectInstance = function(NewInstance)
+local UnProtectInstance = function(NewInstance)
     table.remove(ProtectedInstances, table.find(ProtectedInstances, NewInstance));
 end
 --[[ Script ]]--
 local hui = Instance.new("Folder")
 ProtectInstance(hui)
 hui.Parent = game.CoreGui
-ProtectInstance(hui)
 
 getgenv().gethui = (function()
 	return hui
